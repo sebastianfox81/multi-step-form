@@ -6,7 +6,6 @@ const next = (e) => {
   e.preventDefault();
   nextStep()
 }
-console.log(values.firstname)
 
   return (
     <div>

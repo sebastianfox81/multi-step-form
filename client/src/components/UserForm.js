@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import FormUserDetails from './FormUserDetails';
-import FormPersonalDetails from './FormPersonalDetails'
+import FormPersonalDetails from './FormPersonalDetails';
+import Confirm from './Confirm';
+import Success from './Success';
 
 const UserForm = () => {
 
@@ -31,7 +33,7 @@ const UserForm = () => {
 
   const { step } = userInfo;
   const { firstname, lastname, email, occupation, city, bio} = userInfo;
-  const values = { firstname, lastname, email, occupation, city, bio}
+  const values = { firstname, lastname, email, occupation, city, bio }
   switch(step) {
     case 1:
     return (
@@ -48,20 +50,22 @@ const UserForm = () => {
         handleChange={handleChange}
         values={values}/>
     )
-    // case 3:
-    // return (
-    //   <FormUserDetails
-    //     nextStep={nextStep}
-    //     onChange={handlChange}
-    //     values={values}/>
-    // )
-    // case 4:
-    // return (
-    //   <FormUserDetails
-    //     nextStep={nextStep}
-    //     onChange={handlChange}
-    //     values={values}/>
-    // )
+    case 3:
+    return (
+      <Confirm
+        nextStep={nextStep}
+        prevStep={prevStep}
+        values={values}/>
+    )
+    case 4:
+    return (
+      <Success />
+
+    )
+     default:
+     return (
+       <div>Error</div>
+     )
   }
 
 };
