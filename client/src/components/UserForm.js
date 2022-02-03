@@ -44,6 +44,7 @@ const UserForm = () => {
     return (
       <FormPersonalDetails
         nextStep={nextStep}
+        prevStep={prevStep}
         handleChange={handleChange}
         values={values}/>
     )
